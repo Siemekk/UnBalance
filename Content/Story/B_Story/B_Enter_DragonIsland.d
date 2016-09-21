@@ -238,10 +238,10 @@ func void startup_dragonisland()
 	startup_newworld_part_dragon_island_01();
 	startup_newworld_part_dragon_undead_01();
 	startup_newworld_part_dragon_final_01();
-	PlayVideo("SHIP.BIK");
+//	PlayVideo("SHIP.BIK");
 	Log_CreateTopic(TOPIC_HALLENVONIRDORATH,LOG_MISSION);
 	Log_SetTopicStatus(TOPIC_HALLENVONIRDORATH,LOG_RUNNING);
-	Log_AddEntry(TOPIC_HALLENVONIRDORATH,"Dotarliœmy do wyspy wroga. Jeden Innos wie, co mnie czeka we wnêtrzu tej góry.");
+	Log_AddEntry(TOPIC_HALLENVONIRDORATH,"DotarliÂœmy do wyspy wroga. Jeden Innos wie, co mnie czeka we wnÃªtrzu tej gÃ³ry.");
 	b_kapitelwechsel(6,DRAGONISLAND_ZEN);
 };
 
