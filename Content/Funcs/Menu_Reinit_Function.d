@@ -145,13 +145,16 @@ func void Menu_PerFrame()
 		Humans_NoTakeAnimAppiled	= TRUE;
 	};
 	
-	if(Hlp_StrCmp(Mem_GetGothOpt("IKARUS","ATRIB"), "1"))&&(!NewAttributes)
+	if(HP_Per_Level==5)
 	{
-		NewAttributes= true;
-	}
-	else
-	{
-		NewAttributes = FALSE;
-	};
+		if(Hlp_StrCmp(Mem_GetGothOpt("IKARUS","ATRIB"), "1"))&&(!NewAttributes)
+		{
+			NewAttributes= true;
+		}
+		else
+		{
+			NewAttributes = FALSE;
+		};
+	};;
 
 };
