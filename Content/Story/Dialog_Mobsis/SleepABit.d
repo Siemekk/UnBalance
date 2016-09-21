@@ -12,11 +12,15 @@ func void pc_sleep(var int t)
 		}
 		else if (NewAttributes)&&(Fatigue<60)
 		{
-			PrintScreen("Nie jestem zm�czony !",-1,-1,FONT_SCREEN,2);
+			PrintScreen("Nie jestem zmêczony !",-1,-1,FONT_SCREEN,2);
 		} 
-		else 
+		else if(CURRENTLEVEL != DRAGONISLAND_ZEN)
 		{
 		SleepFX_HeroSleep(t);
+		}
+		else if (CURRENTLEVEL == DRAGONISLAND_ZEN)
+		{
+			PrintScreen("Aura tego miejsca nie pozwala mi należycie wypocząć!",-1,-1,FONT_SCREEN,2);
 		};
 		
 		printglobals(PD_ITEM_MOBSI);
@@ -107,7 +111,7 @@ INSTANCE PC_SleepTime_Noon (C_INFO)
 	information		= PC_SleepTime_Noon_Info;
 	important		= 0;
 	permanent		= 1;
-	description		= "Odpoczywaj do po�udnia";
+	description		= "Odpoczywaj do po³udnia";
 };
 
 FUNC INT PC_SleepTime_Noon_Condition()
@@ -132,7 +136,7 @@ INSTANCE PC_SleepTime_Evening (C_INFO)
 	information		= PC_SleepTime_Evening_Info;
 	important		= 0;
 	permanent		= 1;
-	description		= "Odpoczywaj do nast�pnego wieczora";
+	description		= "Odpoczywaj do nastêpnego wieczora";
 };
 
 FUNC INT PC_SleepTime_Evening_Condition()
@@ -157,7 +161,7 @@ instance PC_SleepTime_Midnight (C_INFO)
 	information		= PC_SleepTime_Midnight_Info;
 	important		= 0;
 	permanent		= 1;
-	description		= "Odpoczywaj do p�nocy";
+	description		= "Odpoczywaj do pó³nocy";
 };
 
 FUNC INT PC_SleepTime_Midnight_Condition()
