@@ -42,7 +42,7 @@ func void SLEEPABIT_S1 ()
 
 		if (SC_IsObsessed == TRUE)
 			{
-				Wld_PlayEffect("DEMENTOR_FX",  hero, hero, 0, 0, 0, FALSE );
+				Wld_PlayEffect("DEMENTOR_FX",  hero, hero, 0, 0, 0, FALSE);
 			};
 	};
 };
