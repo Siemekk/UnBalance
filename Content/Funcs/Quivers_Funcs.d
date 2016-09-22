@@ -105,6 +105,26 @@ func void Quivers_PerFrame_Handle()
 					Quiver_Type = 9;
 					};
 				};
+};
 
 
+func void Quiver_ReinitGame()
+{
+
+	var c_item bow; 
+
+	if(Npc_HasReadiedRangedWeapon(hero))&&()
+	{
+		bow = Npc_GetReadiedRangedWeapon(hero);
+	}
+	else if(Npc_GetEquippedRangedWeapon(hero))
+	{
+		bow = Npc_GetEquippedRangedWeapon(hero);
+	};
+	
+		if(bow.flags & ITEM_BOW)
+		{
+		Equip_Quivers();
+		};
+	
 };
