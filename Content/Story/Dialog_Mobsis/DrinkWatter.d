@@ -53,7 +53,7 @@ instance PC_UseBarrel_Drink(C_INFO)
 	condition = pc_UseBarrel_Drink_condition;
 	information = pc_UseBarrel_Drink_info;
 	permanent = TRUE;
-	description = "Napij siê...";
+	description = "Napij siÃª...";
 };
 
 
@@ -67,7 +67,6 @@ func int pc_UseBarrel_Drink_condition()
 
 func void pc_UseBarrel_Drink_info()
 {	
-	AI_Wait(other,5);
 	var int Procent; Procent=(hero.attribute[ATR_HITPOINTS_MAX]*10)/100;
 	hero.attribute[ATR_HITPOINTS] +=Procent;
 	if(hero.attribute[ATR_HITPOINTS]>hero.attribute[ATR_HITPOINTS_MAX])
@@ -87,7 +86,7 @@ INSTANCE DIA_PC_Hero_FillBottle (C_INFO)
    condition    = DIA_PC_Hero_FillBottle_Condition;
    information  = DIA_PC_Hero_FillBottle_Info;
    permanent	= TRUE;
-   description	= "Nape³nij butelki...";
+   description	= "NapeÂ³nij butelki...";
 };
 
 FUNC INT DIA_PC_Hero_FillBottle_Condition()
@@ -104,7 +103,7 @@ FUNC VOID DIA_PC_Hero_FillBottle_Info()
     Info_ClearChoices		(DIA_PC_Hero_FillBottle);
 	if(Npc_HasItems(hero,ITMI_GLASS)>=1)
 	{
-    Info_AddChoice		(DIA_PC_Hero_FillBottle, "Jedn¹ butelkê.", DIA_PC_Hero_FillBottle_ONE);
+    Info_AddChoice		(DIA_PC_Hero_FillBottle, "JednÂ¹ butelkÃª.", DIA_PC_Hero_FillBottle_ONE);
 	};
 	
 	if(Npc_HasItems(hero,ITMI_GLASS)>=2)
@@ -114,32 +113,32 @@ FUNC VOID DIA_PC_Hero_FillBottle_Info()
 	
 	if(Npc_HasItems(hero,ITMI_GLASS)>=5)
 	{
-    Info_AddChoice		(DIA_PC_Hero_FillBottle, "Piêæ butelek.", DIA_PC_Hero_FillBottle_FIVE);
+    Info_AddChoice		(DIA_PC_Hero_FillBottle, "PiÃªÃ¦ butelek.", DIA_PC_Hero_FillBottle_FIVE);
 	};
 	
 	if(Npc_HasItems(hero,ITMI_GLASS)>=10)
 	{
-    Info_AddChoice		(DIA_PC_Hero_FillBottle, "Dziesiêæ butelek.", DIA_PC_Hero_FillBottle_TEN);
+    Info_AddChoice		(DIA_PC_Hero_FillBottle, "DziesiÃªÃ¦ butelek.", DIA_PC_Hero_FillBottle_TEN);
 	};
 	if(Npc_HasItems(hero,ITMI_GLASS)>=1)
 	{
     Info_AddChoice		(DIA_PC_Hero_FillBottle, "Wszystkie butelki", DIA_PC_Hero_FillBottle_ALL);
 	};
-	Info_AddChoice		(DIA_PC_Hero_FillBottle, "[WRÓÆ]", DIA_PC_Hero_FillBottle_Back);
+	Info_AddChoice		(DIA_PC_Hero_FillBottle, "[WRÃ“Ã†]", DIA_PC_Hero_FillBottle_Back);
 };
 
 FUNC VOID DIA_PC_Hero_FillBottle_ONE()
 {
 CreateInvItems(hero,ITFO_WATER,1);
 Npc_RemoveInvItems(hero,ITMI_GLASS,1);
-AI_PrintScreen("Nape³ni³eœ jedn¹ butelkê !",-1,52,FONT_SCREENBRIGHTLARGE,2);
+AI_PrintScreen("NapeÂ³niÂ³eÅ“ jednÂ¹ butelkÃª !",-1,52,FONT_SCREENBRIGHTLARGE,2);
 };
 
 FUNC VOID DIA_PC_Hero_FillBottle_TWO()
 {
 CreateInvItems(hero,ITFO_WATER,2);
 Npc_RemoveInvItems(hero,ITMI_GLASS,2);
-AI_PrintScreen("Nape³ni³eœ dwie butelki !",-1,52,FONT_SCREENBRIGHTLARGE,2);
+AI_PrintScreen("NapeÂ³niÂ³eÅ“ dwie butelki !",-1,52,FONT_SCREENBRIGHTLARGE,2);
 };
 
 FUNC VOID DIA_PC_Hero_FillBottle_FIVE()
@@ -147,7 +146,7 @@ FUNC VOID DIA_PC_Hero_FillBottle_FIVE()
 CreateInvItems(hero,ITFO_WATER,5);
 Npc_RemoveInvItems(hero,ITMI_GLASS,5);
 Ai_Wait(hero,5);
-AI_PrintScreen("Nape³ni³eœ piêæ butelek !",-1,52,FONT_SCREENBRIGHTLARGE,2);
+AI_PrintScreen("NapeÂ³niÂ³eÅ“ piÃªÃ¦ butelek !",-1,52,FONT_SCREENBRIGHTLARGE,2);
 };
 
 FUNC VOID DIA_PC_Hero_FillBottle_TEN()
@@ -155,7 +154,7 @@ FUNC VOID DIA_PC_Hero_FillBottle_TEN()
 CreateInvItems(hero,ITFO_WATER,10);
 Npc_RemoveInvItems(hero,ITMI_GLASS,10);
 Ai_Wait(hero,10);
-AI_PrintScreen("Nape³ni³eœ dziesiêæ butelek !",-1,52,FONT_SCREENBRIGHTLARGE,2);
+AI_PrintScreen("NapeÂ³niÂ³eÅ“ dziesiÃªÃ¦ butelek !",-1,52,FONT_SCREENBRIGHTLARGE,2);
 };
 
 FUNC VOID DIA_PC_Hero_FillBottle_ALL()
@@ -164,7 +163,7 @@ Ai_Wait(hero,15);
 var int Hero_Glass; Hero_Glass=Npc_HasItems(hero,Itmi_Glass);
 CreateInvItems(hero,ITFO_WATER,Hero_Glass);
 Npc_RemoveInvItems(hero,ITMI_GLASS,Hero_Glass);
-var string msg; msg=ConcatStrings("Nape³ni³eœ ",IntToString(Hero_Glass));
+var string msg; msg=ConcatStrings("NapeÂ³niÂ³eÅ“ ",IntToString(Hero_Glass));
 msg=ConcatStrings(msg, "butelek !");
 AI_PrintScreen(msg,-1,52,FONT_SCREENBRIGHTLARGE,2);
 };
