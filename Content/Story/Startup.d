@@ -67,11 +67,12 @@ func void init_global()
 	const int done = false;
 	if(!done)
 	{
-    Hook_oCNpc__DoTakeVob();
+    	Hook_oCNpc__DoTakeVob();
 	HookEngineF (7592320, 7, Open_Menu);//Open Menu
-	
 	done=true;
 	};	
+	Quiver_ReinitGame();
+	
 };
 
 func void startup_testlevel()
